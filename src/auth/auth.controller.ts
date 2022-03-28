@@ -9,7 +9,7 @@ export class AuthController {
   @UseGuards(AuthGuard('google'))
   async googleAuth(@Req() req) {}
 
-  @Get('process.env.GOOGLE_SECRET')
+  @Get('redirect')
   @UseGuards(AuthGuard('google'))
   async googleAuthRedirect(@Req() req) {
     return this.authService.googleLogin(req);
